@@ -1,5 +1,3 @@
-setwd("C:/ZZZ_Downloads/MakeTxDB/David_Fig1_Data/ForGitHub")
-
 ##### 01Start: Plot repeats and sequence classes #####
 l=ls()
 l=ls()
