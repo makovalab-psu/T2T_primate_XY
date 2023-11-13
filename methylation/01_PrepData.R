@@ -1,9 +1,3 @@
-setwd("C:/ZZZ_Downloads/MakeTxDB/David_Fig1_Data/ForGitHub")
-l=ls()
-l=ls()
-l=l[which(!ls() %in% c("",""))]
-rm(list=l)
-
 
 ##### 01Start: Obtain 18k points methylation profiles of CATannot genes #####
 l=ls()
