@@ -5,4 +5,6 @@ Savannah J. Hoyt, savannah.klein@uconn.edu \
 Jessica M. Storer, jessica.storer@uconn.edu \
 Patrick G.S. Grady, patrick.grady@uconn.edu 
 
-### Files included: 
+### Folders included: 
+```final_repeat_annotations``` : final repeat annotations for ape X and Y chromosomes included in this study in RepeatMasker .out format
+```new_repeat_consensi``` : repeat consensus sequences for new satellites and composite repeats defined in this study
