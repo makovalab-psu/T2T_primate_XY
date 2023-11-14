@@ -8,3 +8,4 @@ Patrick G.S. Grady, patrick.grady@uconn.edu
 ### Folders included: 
 ```final_repeat_annotations``` : final repeat annotations for ape X and Y chromosomes included in this study in RepeatMasker .out format
 ```new_repeat_consensi``` : repeat consensus sequences for new satellites and composite repeats defined in this study
+```composite_annotations``` : composite repeat annotations in bed format
