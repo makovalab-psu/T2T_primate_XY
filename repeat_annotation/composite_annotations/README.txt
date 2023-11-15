@@ -1,1 +1,1 @@
-Locations of composite repeats annotated in this study in bed format.
+Locations of composite repeats annotated in this study in gff3 format.
