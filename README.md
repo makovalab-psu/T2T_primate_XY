@@ -6,9 +6,15 @@ Github repository accompanying the paper: *The Complete Sequence and Comparative
 
 ### links to tools from other repositories used within the paper. 
 https://github.com/arangrhie/T2T-Polish/tree/master/marker_assisted
+
 https://github.com/Dfam-consortium/RepeatModeler
+
 https://github.com/fedorrik/apeXY_hmm
+
 https://github.com/fedorrik/stv
+
 https://github.com/rmhubley/RepeatMasker/tree/master/util
+
 https://github.com/santiagosnchez/vcf2fasta
+
 https://github.com/wharvey31/saffire_sv
