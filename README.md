@@ -13,3 +13,5 @@ https://github.com/santiagosnchez/vcf2fasta
 https://github.com/arangrhie/T2T-Polish/tree/master/marker_assisted
 
 https://github.com/fedorrik/stv
+
+https://github.com/rmhubley/RepeatMasker/tree/master/util
