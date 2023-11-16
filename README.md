@@ -26,7 +26,7 @@ https://github.com/fedorrik/apeXY_hmm
 
 https://github.com/fedorrik/stv
 
-(https://lastz.github.io/lastz/#fmt_rdotplot
+https://lastz.github.io/lastz/#fmt_rdotplot
 
 https://github.com/maickrau/ribotin
 
