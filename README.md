@@ -3,6 +3,8 @@
 
 Github repository accompanying the paper: *The Complete Sequence and Comparative Analysis of Ape Sex Chromosomes*
 
+https://www.biorxiv.org/content/10.1101/2023.11.30.569198v1
+
 
 ### links to tools from other repositories used within the paper. 
 
