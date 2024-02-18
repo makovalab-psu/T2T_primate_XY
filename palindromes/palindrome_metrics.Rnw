@@ -329,10 +329,10 @@ generate_scatterplots_per_species <- function(data, chromosome) {
   stopifnot(any(grepl(chromosome, df$original)))
 
  scatterplot1<-ggplot(df, aes(x = gc, y = spacergc, color=species)) +
-    geom_point(position = position_jitter(width = 0.01),
+    geom_point(
                pch = 19,
                size = 1) +
-    scale_color_manual(values = c("#006E81","#FB2D32","#C3000E","#FD8A1A","#F9CF44","#0E205E"),
+    scale_color_manual(values = c("#006E81AA","#FB2D32AA","#C3000EAA","#FD8A1AAA","#F9CF44AA","#0E205EAA"),
                      name = "Species") +
     scale_x_continuous(breaks = pretty_breaks(n = 2)) +
     labs(x = "GC content of arms",
@@ -356,10 +356,10 @@ generate_scatterplots_per_species <- function(data, chromosome) {
   )) 
   
   scatterplot2<-ggplot(df, aes(x = spacerlength / 1000, y = gc, color=species)) +
-    geom_point(position = position_jitter(width = 0.01),
+    geom_point(
                pch = 19,
                size = 1) +
-    scale_color_manual(values = c("#006E81","#FB2D32","#C3000E","#FD8A1A","#F9CF44","#0E205E"),
+    scale_color_manual(values = c("#006E81AA","#FB2D32AA","#C3000EAA","#FD8A1AAA","#F9CF44AA","#0E205EAA"),
                      name = "Species") +
     scale_x_continuous(breaks = pretty_breaks(n = 3)) +
     labs(x = "Spacer Length [kb]",
@@ -383,10 +383,10 @@ generate_scatterplots_per_species <- function(data, chromosome) {
   )) 
   
   scatterplot3<-ggplot(df, aes(x = armlength / 1000, y = gc, color=species)) +
-    geom_point(position = position_jitter(width = 0.01),
+    geom_point(
                pch = 19,
                size = 1) +
-    scale_color_manual(values = c("#006E81","#FB2D32","#C3000E","#FD8A1A","#F9CF44","#0E205E"),
+    scale_color_manual(values = c("#006E81AA","#FB2D32AA","#C3000EAA","#FD8A1AAA","#F9CF44AA","#0E205EAA"),
                      name = "Species") +
     scale_x_continuous(breaks = pretty_breaks(n = 3)) +
     labs(x = "Arm Length [kb]",
@@ -410,10 +410,10 @@ generate_scatterplots_per_species <- function(data, chromosome) {
   )) 
   
   scatterplot4<-ggplot(df, aes(x = spacerlength / 1000, y = identity, color=species)) +
-    geom_point(position = position_jitter(width = 0.01),
+    geom_point(
                pch = 19,
                size = 1) +
-    scale_color_manual(values = c("#006E81","#FB2D32","#C3000E","#FD8A1A","#F9CF44","#0E205E"),
+    scale_color_manual(values = c("#006E81AA","#FB2D32AA","#C3000EAA","#FD8A1AAA","#F9CF44AA","#0E205EAA"),
                      name = "Species") +
     scale_x_continuous(breaks = pretty_breaks(n = 3)) +
     labs(x = "Spacer Length [kb]",
@@ -437,10 +437,10 @@ generate_scatterplots_per_species <- function(data, chromosome) {
   )) 
   
   scatterplot5<-ggplot(df, aes(x = armlength / 1000, y = identity, color=species)) +
-    geom_point(position = position_jitter(width = 0.01),
+    geom_point(
                pch = 19,
                size = 1) +
-    scale_color_manual(values = c("#006E81","#FB2D32","#C3000E","#FD8A1A","#F9CF44","#0E205E"),
+    scale_color_manual(values = c("#006E81AA","#FB2D32AA","#C3000EAA","#FD8A1AAA","#F9CF44AA","#0E205EAA"),
                      name = "Species") +
     scale_x_continuous(breaks = pretty_breaks(n = 3)) +
     labs(x = "Arm Length [kb]",
@@ -474,7 +474,7 @@ generate_scatterplots_per_species(dfX, "chrX")
 <<plot palindrome arm lengths, and the results of GC content analysis in a single plot>>=
 require(gridExtra)
 composite_plot1 <- grid.arrange(p1,p2,q1,q2, ncol = 2)
-ggsave("composite_plot1.png", composite_plot1)
+ggsave("composite_plot1.png", composite_plot1, width = 8.5, height = 11, units = "in", dpi = 300)
 @
 
 
@@ -483,25 +483,25 @@ ggsave("composite_plot1.png", composite_plot1)
 
 #load scatterplots for the X chromosome
 load(file = "chrXscatterplot.Rdata")
-A<-scatterplot1
-C<-scatterplot2
-E<-scatterplot3
-G<-scatterplot4
-I<-scatterplot5
+As<-scatterplot1
+Cs<-scatterplot2
+Es<-scatterplot3
+Gs<-scatterplot4
+Is<-scatterplot5
 
 #load scatterplots for the Y chromosome
 load(file = "chrYscatterplot.Rdata")
-B<-scatterplot1
-D<-scatterplot2
-F<-scatterplot3
-H<-scatterplot4
-J<-scatterplot5
+Bs<-scatterplot1
+Ds<-scatterplot2
+Fs<-scatterplot3
+Hs<-scatterplot4
+Js<-scatterplot5
 
-composite_plot2 <- grid.arrange(A,B,G,H,I,J, ncol = 2)
-ggsave("composite_plot2.png", composite_plot2)
+composite_plot2 <- grid.arrange(As,Bs,Gs,Hs,Is,Js, ncol = 2)
+ggsave("composite_plot2.png", composite_plot2, width = 8.5, height = 11, units = "in", dpi = 300)
 
-composite_plot3 <- grid.arrange(C,D,E,F,plot.new(),plot.new(), ncol = 2)
-ggsave("composite_plot3.png", composite_plot3)
+composite_plot3 <- grid.arrange(Cs,Ds,Es,Fs,plot.new(),plot.new(), ncol = 2)
+ggsave("composite_plot3.png", composite_plot3, width = 8.5, height = 11, units = "in", dpi = 300)
 
 @
 
