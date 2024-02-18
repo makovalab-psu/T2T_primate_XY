@@ -1,0 +1,7 @@
+chr - hs1 human 0 154259566 humanX
+chr - hs2 chimpanzee 0 153892427 chimpX
+chr - hs3 bonobo 0 160249396 bonoboX
+chr - hs4 gorilla 0 177553137 gorillaX
+chr - hs5 sorang 0 162586350 sorangX
+chr - hs6 borang 0 161100531 borangX
+chr - hs7 gibbon 0 165588543 gibbonX
