@@ -1,0 +1,603 @@
+\documentclass{article}
+
+\begin{document}
+\SweaveOpts{concordance=TRUE}
+
+<<load palindrome data and create table with all the information for chromosomes X and Y, eval=FALSE>>=
+
+#skip this chunk if files palindrome_metrics.chrX.tsv and palindrome_metrics.chrY.tsv are available
+
+require(gtools)
+require(stringr)
+require(ggplot2)
+
+#color scheme
+color_Borang<-rgb(249,207,68, maxColorValue = 255)
+color_Sorang<-rgb(253,138,26, maxColorValue = 255)
+color_Bonobo<-rgb(251,45,50, maxColorValue = 255)
+color_Chimp<-rgb(195,0,14, maxColorValue = 255)
+color_Siamang<-rgb(14,32,94, maxColorValue = 255)
+color_Gorilla<-rgb(0,110,129, maxColorValue = 255)
+color_Human<-rgb(150,150,150, maxColorValue = 255)
+
+color_X<-rgb(252,141,98, maxColorValue = 255)
+color_Y<-rgb(141,160,203, maxColorValue = 255)
+
+custom_colors <- c(
+  "mGorGor1" = color_Gorilla,
+  "mPanPan1" = color_Bonobo,
+  "mPanTro3" = color_Chimp,
+  "mPonAbe1" = color_Sorang,
+  "mPonPyg2" = color_Borang,
+  "mSymSyn1" = color_Siamang
+)
+
+
+load_palindrome_information <- function(folder) {
+  #load palindrome information, either for the chromosome X or chromosome Y
+  setwd(folder)
+  
+  #pair the original arm names from palindrover with numerical names 
+  keyvaluepairs <-
+    as.data.frame(
+      read.table(
+        "palindromes.keyvaluepairs.txt",
+        sep = "\t",
+        header = FALSE,
+        comment.char = ""
+      )
+    )
+  colnames(keyvaluepairs) <- c("renamed", "original")
+  modified_string <-
+    gsub(paste0(':', ".*"), "", keyvaluepairs$original)
+  keyvaluepairs$original <- modified_string
+  
+  species <- sub("\\..*", "", keyvaluepairs$renamed)
+  keyvaluepairs$species <- species
+  
+  numbers <-
+    as.numeric(sub(".*part-(\\d+)\\.fa$", "\\1", keyvaluepairs$renamed))
+  keyvaluepairs$order <- numbers
+  
+  keyvaluepairs <-
+    keyvaluepairs[order(keyvaluepairs$species, keyvaluepairs$order),]
+  
+  #pair the original spacers from palindrover with numerical names 
+  spacer_keyvaluepairs <-
+    as.data.frame(
+      read.table(
+        "spacers.keyvaluepairs.txt",
+        sep = "\t",
+        header = FALSE,
+        comment.char = ""
+      )
+    )
+  colnames(spacer_keyvaluepairs) <- c("spacer_renamed", "original")
+  modified_string <-
+    gsub(paste0(':', ".*"), "", spacer_keyvaluepairs$original)
+  spacer_keyvaluepairs$original <- modified_string
+  
+  spacer_keyvaluepairs <-
+    spacer_keyvaluepairs[order(spacer_keyvaluepairs$original),]
+  
+  #load the GC content of the arms
+  gc <-
+    as.data.frame(read.table(
+      "palindroms.geecee.txt",
+      sep = "\t",
+      header = FALSE,
+      comment.char = ""
+    ))
+  colnames(gc) <- c("renamed", "gc")
+  gc <- unique(gc)
+  
+  #load the GC content of the spacers
+  spacergc <-
+    as.data.frame(read.table(
+      "spacers.geecee.txt",
+      sep = "\t",
+      header = FALSE,
+      comment.char = ""
+    ))
+  colnames(spacergc) <- c("spacer_renamed", "spacergc")
+  spacergc <- unique(spacergc)
+  
+  #load the length of the spacers
+  spacers <-
+    as.data.frame(
+      read.table(
+        "palindromes.spacerlengths.txt",
+        sep = "\t",
+        header = FALSE,
+        comment.char = ""
+      )
+    )
+  colnames(spacers) <- c("original", "spacerlength")
+  spacers <- unique(spacers)
+  
+  #load the length of the arms
+  arms <-
+    as.data.frame(
+      read.table(
+        "palindromes.armlengths.txt",
+        sep = "\t",
+        header = FALSE,
+        comment.char = ""
+      )
+    )
+  colnames(arms) <- c("original", "armlength")
+  arms <- unique(arms)
+  
+  #load the percentage identity between palindrome arms
+  identity <-
+    as.data.frame(read.table(
+      "palindroms.identity.txt",
+      sep = "\t",
+      header = FALSE,
+      comment.char = ""
+    ))
+  colnames(identity) <- c("renamed", "identity")
+  identity <- unique(identity)
+  
+  #note that arms and spacers will also have information about the human, that is not used after merging
+  print(dim(arms))
+  print(dim(spacers))
+  print(dim(identity))
+  print(dim(gc))
+  print(dim(spacergc))
+  
+  
+  #combine all of the information above to describe interesting metrics about the palindromes
+  #merge data into a single table
+  df_renamed <- merge(keyvaluepairs, gc, by = "renamed", all.x = TRUE)
+  df_renamed <- merge(df_renamed, identity, by = "renamed", all.x = TRUE)
+  
+  renamed_spacergc<-merge(spacer_keyvaluepairs,spacergc,all.x=TRUE)
+  df_original <- merge(arms, spacers, by = "original")
+  df_original <- merge(df_original, renamed_spacergc, by = "original", all.x = TRUE)
+  
+  df<-merge(df_renamed,df_original, all.x=TRUE)
+  
+  df <- df[order(df$species, df$order),]
+  df <- unique(df)
+  return(df)
+}
+
+#call the palindrome loading function with the information about the folder that locates the text files describing the palindromes
+dfY <- load_palindrome_information("/Users/mcechova/Desktop/palindrover_tracks.20230615/visualization/chrY")
+dfX <- load_palindrome_information("/Users/mcechova/Desktop/palindrover_tracks.20230615/visualization/chrX")
+
+#only keep one row per palindrome, this is achieved by subsetting odd rows from the table
+dfY <- dfY[dfY$order %% 2 == 1, ]
+dfX <- dfX[dfX$order %% 2 == 1, ]
+
+#number of palindromes as detected by palindrover 
+#for mGorGor1 mPanPan1 mPanTro3 mPonAbe1 mPonPyg2 mSymSyn1 
+stopifnot(table(dfY$species)==c(24,61,30,48,43,18)) 
+stopifnot(table(dfX$species)==c(39,43,35,32,25,50))
+
+#check that appropriate columns are present
+stopifnot(colnames(dfY)==c("original","renamed","species","order","gc","identity","armlength","spacerlength","spacer_renamed","spacergc"))
+stopifnot(colnames(dfX)==c("original","renamed","species","order","gc","identity","armlength","spacerlength","spacer_renamed","spacergc"))
+
+print(dim(dfY))
+print(dim(dfX))
+
+#remove rows with NA, e.g. when spacer length is 0 in orangutan
+dfY <- na.omit(dfY)
+dfX <- na.omit(dfX)
+
+print(dim(dfY))
+print(dim(dfX))
+
+#write dataframes with palindrome information into a tab-delimited file
+write.table(dfY, file = "palindrome_metrics.chrY.tsv", sep = "\t", quote = FALSE, row.names = FALSE)
+write.table(dfX, file = "palindrome_metrics.chrX.tsv", sep = "\t", quote = FALSE, row.names = FALSE)
+@
+
+<<load data into dataframe>>=
+
+#load file with metrics if available, otherwise run the previous chunk
+dfY<-as.data.frame(read.table("palindrome_metrics.chrY.tsv",header=TRUE))
+dfX<-as.data.frame(read.table("palindrome_metrics.chrX.tsv",header=TRUE))
+@
+
+<<calculate ratios of lengths between X and Y>>=
+
+species_vector <- unique(sort(dfY$species))
+#rows_matching_chrX <- arms[grepl("chm13", arms$original), ]
+#rows_matching_chrY <- arms[grepl("hg002", arms$original), ]
+
+for (sp in species_vector) { 
+  subset_species_X<-dfX[dfX$species==sp,]
+  subset_species_Y<-dfY[dfY$species==sp,]
+  
+  #print(nrow(subset_species_X))
+  #print(nrow(subset_species_Y))
+  
+  ratio_of_medians <- median(subset_species_Y$armlength)/median(subset_species_X$armlength)
+  ratio_of_means <- mean(subset_species_Y$armlength)/mean(subset_species_X$armlength)
+  pvalue<-(wilcox.test(subset_species_X$armlength,subset_species_Y$armlength,alternative="less"))$p.value
+  
+  print(paste("species","ratio_of_medians","ratio_of_means","p-value_for_Wilcoxon_Rank_Sum "),sep="          ")
+  print(paste(sp,round(ratio_of_medians,2),round(ratio_of_means,2),pvalue,sep="          "))
+  print(paste("mean arm length X:", mean(subset_species_X$armlength)))
+  print(paste("mean arm length Y:", mean(subset_species_Y$armlength)))
+}
+
+#print(median(dfY$armlength)/median(dfX$armlength))
+#print(mean(dfY$armlength)/mean(dfX$armlength))
+@
+
+
+
+<<Plot lengths of X and Y palindromes>>=
+par(bg="white",pty = "s")
+
+#combine length information for X and Y
+combined_data <- data.frame(
+  value = c(dfY$armlength, dfX$armlength),
+  group = factor(rep(c("Chromosome Y", "Chromosome X"), lengths(list(dfY$armlength,dfX$armlength))))
+)
+
+group_colors <- c("Chromosome Y" = color_Y, "Chromosome X" = color_X)
+
+p1<-ggplot(combined_data, aes(x = group, y = value/1000, fill = group)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  labs(title = "Palindrome lengths", # of Bonobo, Chimpanzee, Gorilla, S. Orangutan, B. Orangutan, Siamang
+       x = "Chromosome",
+       y = "Value") +
+  scale_fill_manual(values = group_colors) +
+  ylab("[kb]") +
+  theme(axis.text.x = element_text(size = 12),  
+        axis.text.y = element_text(size = 12),  
+        axis.title = element_text(size = 12),   
+        plot.title = element_text(size = 11)) +  
+  theme(legend.text = element_text(size = 11)) +
+  theme(
+    plot.background = element_rect(fill = "white")  # Set plot background to white
+  ) +
+  theme_minimal() + theme(axis.text.x = element_blank())
+ggsave(paste0("XY_palindrome_lengths.png"))
+
+@
+
+<<Plot difference in GC content for arms versus spacers>>=
+
+#combine delta GC information for X and Y arms and spacers
+combined_data_gc_diff <- data.frame(
+  value = c((dfX$gc-dfX$spacergc), (dfY$gc-dfY$spacergc)),
+  group = factor(rep(c("Chromosome X", "Chromosome Y"), lengths(list((dfX$gc-dfX$spacergc),(dfY$gc-dfY$spacergc)))))
+)
+
+p2<-ggplot(combined_data_gc_diff, aes(x = group, y=value, fill=group)) +
+  geom_boxplot(position = position_dodge(width = 0.8)) +
+  scale_fill_manual(values = group_colors) +
+  coord_cartesian(ylim = c(-0.1,0.1)) +
+  labs(title = "Δ of GC content arms vs spacers", 
+       x = "Chromosome",
+       y = "Δ GC") +
+  theme(axis.text.x = element_text(size = 12),  
+        axis.text.y = element_text(size = 12),  
+        axis.title = element_text(size = 12),   
+        plot.title = element_text(size = 11)) +  
+  theme(legend.text = element_text(size = 11)) +
+  theme(
+    plot.background = element_rect(fill = "white")  # Set plot background to white
+  ) + 
+  geom_hline(yintercept = 0, linetype = "dotted") +
+  theme_minimal() + theme(axis.text.x = element_blank())
+ggsave(paste0("GC_arms_minus_spacers.png"))
+
+
+@
+
+<<show total GC content of arms verus spacers on the X and Y chromosomes>>=
+par(mfrow=c(1,2))
+
+spacer_groups <- c(rep(c("Chromosome X"), length(dfX$spacergc)),rep(c("Chromosome Y"), length(dfY$spacergc)))
+spacer_df <- data.frame(GC = c(dfX$spacergc,dfY$spacergc), Group = spacer_groups)
+
+q1<-ggplot(spacer_df, aes(x = spacer_groups, y = GC, fill=spacer_groups)) +
+  geom_boxplot() +
+    theme_minimal() + theme(axis.text.x = element_blank()) +
+    scale_fill_manual(values = c(color_X, color_Y)) +
+    xlab("Chromosome") +
+    coord_cartesian(ylim = c(0, 1)) +
+    labs(title = "GC content of palindrome spacers")
+
+arms_groups <- c(rep(c("Chromosome X"), length(dfX$gc)),rep(c("Chromosome Y"), length(dfY$gc)))
+arms_df <- data.frame(GC = c(dfX$gc,dfY$gc), Group = arms_groups)
+
+q2<-ggplot(arms_df, aes(x = arms_groups, y = GC, fill=arms_groups)) +
+  geom_boxplot() +
+    theme_minimal() + theme(axis.text.x = element_blank()) +
+    scale_fill_manual(values = c(color_X, color_Y)) +
+    xlab("Chromosome") +
+    coord_cartesian(ylim = c(0, 1)) +
+    labs(title = "GC content of palindrome arms")
+
+
+@
+
+
+<<scatterplots per species>>=
+require(scales)
+
+generate_scatterplots_per_species <- function(data, chromosome) {
+  df <- data
+  stopifnot(any(grepl(chromosome, df$original)))
+
+ scatterplot1<-ggplot(df, aes(x = gc, y = spacergc, color=species)) +
+    geom_point(position = position_jitter(width = 0.01),
+               pch = 19,
+               size = 1) +
+    scale_color_manual(values = c("#006E81","#FB2D32","#C3000E","#FD8A1A","#F9CF44","#0E205E"),
+                     name = "Species") +
+    scale_x_continuous(breaks = pretty_breaks(n = 2)) +
+    labs(x = "GC content of arms",
+         y = "GC content of spacer",
+         title = paste0(chromosome)) +
+    theme_minimal() +
+    theme(
+      axis.title = element_text(size = 14),
+      axis.text = element_text(size = 10),
+      plot.title = element_text(size = 18),
+      legend.text = element_text(size = 14)
+    ) +
+    theme(plot.background = element_rect(fill = "white"),
+          plot.title = element_text(size = 13), axis.title.x = element_text(size = 3)) +
+    facet_wrap( ~ species, scales = "free") + guides(colour = "none") + theme_minimal() 
+  
+  ggsave(paste0(
+    "scatterplot.by_species.gc_content_of_arms_vs_gc_content_of_spacer",
+    chromosome,
+    ".png"
+  )) 
+  
+  scatterplot2<-ggplot(df, aes(x = spacerlength / 1000, y = gc, color=species)) +
+    geom_point(position = position_jitter(width = 0.01),
+               pch = 19,
+               size = 1) +
+    scale_color_manual(values = c("#006E81","#FB2D32","#C3000E","#FD8A1A","#F9CF44","#0E205E"),
+                     name = "Species") +
+    scale_x_continuous(breaks = pretty_breaks(n = 3)) +
+    labs(x = "Spacer Length [kb]",
+         y = "GC content of arms",
+         title = paste0(chromosome)) +
+    theme_minimal() +
+    theme(
+      axis.title = element_text(size = 14),
+      axis.text = element_text(size = 10),
+      plot.title = element_text(size = 18),
+      legend.text = element_text(size = 14)
+    ) +
+    theme(plot.background = element_rect(fill = "white"),
+          plot.title = element_text(size = 13), axis.title.x = element_text(size = 3)) +
+    facet_wrap( ~ species, scales = "free") + guides(colour = "none") + theme_minimal() 
+  
+  ggsave(paste0(
+    "scatterplot.by_species.spacer_length_vs_gc_content_of_arms.",
+    chromosome,
+    ".png"
+  )) 
+  
+  scatterplot3<-ggplot(df, aes(x = armlength / 1000, y = gc, color=species)) +
+    geom_point(position = position_jitter(width = 0.01),
+               pch = 19,
+               size = 1) +
+    scale_color_manual(values = c("#006E81","#FB2D32","#C3000E","#FD8A1A","#F9CF44","#0E205E"),
+                     name = "Species") +
+    scale_x_continuous(breaks = pretty_breaks(n = 3)) +
+    labs(x = "Arm Length [kb]",
+         y = "GC content of arms",
+         title = paste0(chromosome)) +
+    theme_minimal() +
+    theme(
+      axis.title = element_text(size = 14),
+      axis.text = element_text(size = 10),
+      plot.title = element_text(size = 18),
+      legend.text = element_text(size = 14)
+    ) +
+    theme(plot.background = element_rect(fill = "white"),
+          plot.title = element_text(size = 13), axis.title.x = element_text(size = 3)) +
+    facet_wrap( ~ species, scales = "free") + guides(colour = "none") + theme_minimal() 
+  
+  ggsave(paste0(
+    "scatterplot.by_species.arm_length_vs_gc_content_of_arms.",
+    chromosome,
+    ".png"
+  )) 
+  
+  scatterplot4<-ggplot(df, aes(x = spacerlength / 1000, y = identity, color=species)) +
+    geom_point(position = position_jitter(width = 0.01),
+               pch = 19,
+               size = 1) +
+    scale_color_manual(values = c("#006E81","#FB2D32","#C3000E","#FD8A1A","#F9CF44","#0E205E"),
+                     name = "Species") +
+    scale_x_continuous(breaks = pretty_breaks(n = 3)) +
+    labs(x = "Spacer Length [kb]",
+         y = "Sequence identity",
+         title = paste0(chromosome)) +
+    theme_minimal() +
+    theme(
+      axis.title = element_text(size = 14),
+      axis.text = element_text(size = 10),
+      plot.title = element_text(size = 18),
+      legend.text = element_text(size = 14)
+    ) +
+    theme(plot.background = element_rect(fill = "white"),
+          plot.title = element_text(size = 13), axis.title.x = element_text(size = 3)) +
+    facet_wrap( ~ species, scales = "free") + guides(colour = "none") + theme_minimal() 
+  
+  ggsave(paste0(
+    "scatterplot.by_species.spacer_length_vs_sequence_identity.",
+    chromosome,
+    ".png"
+  )) 
+  
+  scatterplot5<-ggplot(df, aes(x = armlength / 1000, y = identity, color=species)) +
+    geom_point(position = position_jitter(width = 0.01),
+               pch = 19,
+               size = 1) +
+    scale_color_manual(values = c("#006E81","#FB2D32","#C3000E","#FD8A1A","#F9CF44","#0E205E"),
+                     name = "Species") +
+    scale_x_continuous(breaks = pretty_breaks(n = 3)) +
+    labs(x = "Arm Length [kb]",
+         y = "Sequence identity",
+         title = paste0(chromosome)) +
+    theme_minimal() +
+    theme(
+      axis.title = element_text(size = 14),
+      axis.text = element_text(size = 10),
+      plot.title = element_text(size = 18),
+      legend.text = element_text(size = 14)
+    ) +
+    theme(plot.background = element_rect(fill = "white"),
+          plot.title = element_text(size = 13), axis.title.x = element_text(size = 3)) +
+    facet_wrap( ~ species, scales = "free") + guides(colour = "none") + theme_minimal() 
+  
+  ggsave(paste0(
+    "scatterplot.by_species.arm_length_vs_sequence_identity.",
+    chromosome,
+    ".png"
+  )) 
+  RnameVar<-paste0(gsub(" ", "", chromosome, fixed = TRUE), "scatterplot.Rdata")
+  save(scatterplot1, scatterplot2, scatterplot3, scatterplot4, scatterplot5, file = RnameVar)
+  
+}
+generate_scatterplots_per_species(dfY, "chrY")
+generate_scatterplots_per_species(dfX, "chrX")
+@
+
+
+<<plot palindrome arm lengths, and the results of GC content analysis in a single plot>>=
+require(gridExtra)
+composite_plot1 <- grid.arrange(p1,p2,q1,q2, ncol = 2)
+ggsave("composite_plot1.png", composite_plot1)
+@
+
+
+<<plot scatterplots with raw data>>=
+# Combine the plots using grid.arrange
+
+#load scatterplots for the X chromosome
+load(file = "chrXscatterplot.Rdata")
+A<-scatterplot1
+C<-scatterplot2
+E<-scatterplot3
+G<-scatterplot4
+I<-scatterplot5
+
+#load scatterplots for the Y chromosome
+load(file = "chrYscatterplot.Rdata")
+B<-scatterplot1
+D<-scatterplot2
+F<-scatterplot3
+H<-scatterplot4
+J<-scatterplot5
+
+composite_plot2 <- grid.arrange(A,B,G,H,I,J, ncol = 2)
+ggsave("composite_plot2.png", composite_plot2)
+
+composite_plot3 <- grid.arrange(C,D,E,F,plot.new(),plot.new(), ncol = 2)
+ggsave("composite_plot3.png", composite_plot3)
+
+@
+
+
+<<CALCULATE THE STRENGTH OF CORRELATIONS>>=
+
+df<-dfY
+#method_cor<-"spearman"
+method_cor<-"pearson"
+
+print("Spacer length and sequence identity")
+correlation_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor(spacerlength, identity, method = method_cor))
+correlation_results <- ungroup(correlation_results)
+print(correlation_results)
+
+print("Arm length and sequence identity")
+correlation_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor(armlength, identity, method = method_cor))
+correlation_results <- ungroup(correlation_results)
+print(correlation_results)
+
+print("Arm length and GC content of arms")
+correlation_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor(armlength, gc, method = method_cor))
+correlation_results <- ungroup(correlation_results)
+print(correlation_results)
+
+print("Spacer length and GC content of arms")
+correlation_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor(spacerlength, gc, method = method_cor))
+correlation_results <- ungroup(correlation_results)
+print(correlation_results)
+
+print("GC content of arms and GC content of spacer")
+correlation_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor(gc, spacergc, method = method_cor))
+correlation_results <- ungroup(correlation_results)
+print(correlation_results)
+
+@
+
+<<CALCULATE THE PVALUES OF CORRELATION>>=
+
+df<-dfX
+method_cor<-"spearman"
+#method_cor<-"pearson"
+
+print("Spacer length and sequence identity")
+pvalue_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor.test(spacerlength, identity, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
+pvalue_results <- ungroup(pvalue_results)
+print(pvalue_results)
+
+print("Arm length and sequence identity")
+pvalue_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor.test(armlength, identity, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
+pvalue_results <- ungroup(pvalue_results)
+print(pvalue_results)
+
+print("Arm length and GC content of arms")
+pvalue_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor.test(armlength, gc, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
+pvalue_results <- ungroup(pvalue_results)
+print(pvalue_results)
+
+print("Spacer length and GC content of arms")
+pvalue_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor.test(spacerlength, gc, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
+pvalue_results <- ungroup(pvalue_results)
+print(pvalue_results)
+
+print("GC content of arms and GC content of spacer")
+pvalue_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor.test(gc, spacergc, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
+pvalue_results <- ungroup(pvalue_results)
+print(pvalue_results)
+
+@
+
+<<coverages of palindromes between X and Y>>=
+x_palindrome_coverages <- c(0.020,0.019,0.016,0.016,0.013,0.013,0.014)
+y_palindrome_coverages <- c(0.275,0.209,0.057,0.067,0.103,0.142,0.095)
+
+wilcox.test(x_palindrome_coverages,y_palindrome_coverages)
+@
+
+
+\end{document}
