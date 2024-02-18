@@ -66,6 +66,8 @@ for a in *spacerSeq.chr*.fa; do echo $a; perl fasta-splitter.pl --part-size 1 --
 cd spacers
 for a in *.fa; do echo $a; geecee -sequence ${a} -outfile ${a}.geecee; done;
 for a in *geecee; do echo $a | tr "\n" "\t" |  sed s'/.geecee//g'; grep -v "#" $a | cut -d' ' -f3; done >../spacers.geecee.txt
+#create key value pairs
+for a in *.fa; do echo $a | tr "\n" "\t"; head -n 1 $a | sed s'/>//g'; done >../spacers.keyvaluepairs.txt
 
 ###STEP 8
 #calculate spacer lengths
