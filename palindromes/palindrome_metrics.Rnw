@@ -217,6 +217,8 @@ for (sp in species_vector) {
   
   ratio_of_medians <- median(subset_species_Y$armlength)/median(subset_species_X$armlength)
   ratio_of_means <- mean(subset_species_Y$armlength)/mean(subset_species_X$armlength)
+  
+  #test if palindrome lengths on the Y are longer than on the X
   pvalue<-(wilcox.test(subset_species_X$armlength,subset_species_Y$armlength,alternative="less"))$p.value
   
   print(paste("species","ratio_of_medians","ratio_of_means","p-value_for_Wilcoxon_Rank_Sum "),sep="          ")
@@ -227,6 +229,8 @@ for (sp in species_vector) {
 
 #print(median(dfY$armlength)/median(dfX$armlength))
 #print(mean(dfY$armlength)/mean(dfX$armlength))
+
+#wilcox.test(rows_matching_chrX$armlength,rows_matching_chrY$armlength,alternative="less")
 @
 
 
@@ -289,7 +293,9 @@ p2<-ggplot(combined_data_gc_diff, aes(x = group, y=value, fill=group)) +
   theme_minimal() + theme(axis.text.x = element_blank())
 ggsave(paste0("GC_arms_minus_spacers.png"))
 
-
+#test if gc content of arms is greater than gc content of spacers
+t.test(dfX$gc,dfX$spacergc,alternative="greater")
+t.test(dfY$gc,dfY$spacergc,alternative="greater")
 @
 
 <<show total GC content of arms verus spacers on the X and Y chromosomes>>=
@@ -317,7 +323,9 @@ q2<-ggplot(arms_df, aes(x = arms_groups, y = GC, fill=arms_groups)) +
     coord_cartesian(ylim = c(0, 1)) +
     labs(title = "GC content of palindrome arms")
 
-
+#test if GC content differs between X and Y chromosomes
+t.test(dfX$gc,dfY$gc) #for arms
+t.test(dfX$spacergc,dfY$spacergc) #for spacers
 @
 
 
@@ -508,9 +516,32 @@ ggsave("composite_plot3.png", composite_plot3, width = 8.5, height = 11, units =
 
 <<CALCULATE THE STRENGTH OF CORRELATIONS>>=
 
+#choose the appropriate chromosome and method
+#df<-dfX
 df<-dfY
 #method_cor<-"spearman"
 method_cor<-"pearson"
+
+print("GC content of arms and GC content of spacer")
+correlation_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor(gc, spacergc, method = method_cor))
+correlation_results <- ungroup(correlation_results)
+print(correlation_results)
+
+print("Spacer length and GC content of arms")
+correlation_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor(spacerlength, gc, method = method_cor))
+correlation_results <- ungroup(correlation_results)
+print(correlation_results)
+
+print("Arm length and GC content of arms")
+correlation_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor(armlength, gc, method = method_cor))
+correlation_results <- ungroup(correlation_results)
+print(correlation_results)
 
 print("Spacer length and sequence identity")
 correlation_results <- df %>%
@@ -526,69 +557,51 @@ correlation_results <- df %>%
 correlation_results <- ungroup(correlation_results)
 print(correlation_results)
 
-print("Arm length and GC content of arms")
-correlation_results <- df %>%
-  group_by(species) %>%
-  summarize(method_corr = cor(armlength, gc, method = method_cor))
-correlation_results <- ungroup(correlation_results)
-print(correlation_results)
-
-print("Spacer length and GC content of arms")
-correlation_results <- df %>%
-  group_by(species) %>%
-  summarize(method_corr = cor(spacerlength, gc, method = method_cor))
-correlation_results <- ungroup(correlation_results)
-print(correlation_results)
-
-print("GC content of arms and GC content of spacer")
-correlation_results <- df %>%
-  group_by(species) %>%
-  summarize(method_corr = cor(gc, spacergc, method = method_cor))
-correlation_results <- ungroup(correlation_results)
-print(correlation_results)
-
 @
 
 <<CALCULATE THE PVALUES OF CORRELATION>>=
 
-df<-dfX
-method_cor<-"spearman"
-#method_cor<-"pearson"
-
-print("Spacer length and sequence identity")
-pvalue_results <- df %>%
-  group_by(species) %>%
-  summarize(method_corr = cor.test(spacerlength, identity, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
-pvalue_results <- ungroup(pvalue_results)
-print(pvalue_results)
-
-print("Arm length and sequence identity")
-pvalue_results <- df %>%
-  group_by(species) %>%
-  summarize(method_corr = cor.test(armlength, identity, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
-pvalue_results <- ungroup(pvalue_results)
-print(pvalue_results)
-
-print("Arm length and GC content of arms")
-pvalue_results <- df %>%
-  group_by(species) %>%
-  summarize(method_corr = cor.test(armlength, gc, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
-pvalue_results <- ungroup(pvalue_results)
-print(pvalue_results)
-
-print("Spacer length and GC content of arms")
-pvalue_results <- df %>%
-  group_by(species) %>%
-  summarize(method_corr = cor.test(spacerlength, gc, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
-pvalue_results <- ungroup(pvalue_results)
-print(pvalue_results)
+#choose the appropriate chromosome and method
+#df<-dfX
+df<-dfY
+#method_cor<-"spearman"
+method_cor<-"pearson"
+alpha<-0.1
 
 print("GC content of arms and GC content of spacer")
 pvalue_results <- df %>%
   group_by(species) %>%
   summarize(method_corr = cor.test(gc, spacergc, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
 pvalue_results <- ungroup(pvalue_results)
-print(pvalue_results)
+print(pvalue_results$method_corr<alpha)
+
+print("Spacer length and GC content of arms")
+pvalue_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor.test(spacerlength, gc, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
+pvalue_results <- ungroup(pvalue_results)
+print(pvalue_results$method_corr<alpha)
+
+print("Arm length and GC content of arms")
+pvalue_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor.test(armlength, gc, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
+pvalue_results <- ungroup(pvalue_results)
+print(pvalue_results$method_corr<alpha)
+
+print("Spacer length and sequence identity")
+pvalue_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor.test(spacerlength, identity, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
+pvalue_results <- ungroup(pvalue_results)
+print(pvalue_results$method_corr<alpha)
+
+print("Arm length and sequence identity")
+pvalue_results <- df %>%
+  group_by(species) %>%
+  summarize(method_corr = cor.test(armlength, identity, method = method_cor, exact = FALSE, alternative="two.sided")$p.value)
+pvalue_results <- ungroup(pvalue_results)
+print(pvalue_results$method_corr<alpha)
 
 @
 
@@ -596,6 +609,7 @@ print(pvalue_results)
 x_palindrome_coverages <- c(0.020,0.019,0.016,0.016,0.013,0.013,0.014)
 y_palindrome_coverages <- c(0.275,0.209,0.057,0.067,0.103,0.142,0.095)
 
+#test if coverages of palindromes differ between X and Y chromosomes
 wilcox.test(x_palindrome_coverages,y_palindrome_coverages)
 @
 
