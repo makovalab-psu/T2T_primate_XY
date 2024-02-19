@@ -3,13 +3,17 @@
 \begin{document}
 \SweaveOpts{concordance=TRUE}
 
-<<load palindrome data and create table with all the information for chromosomes X and Y, eval=FALSE>>=
-
-#skip this chunk if files palindrome_metrics.chrX.tsv and palindrome_metrics.chrY.tsv are available
-
+<<load the libraries>>=
 require(gtools)
 require(stringr)
 require(ggplot2)
+require(dplyr)
+@
+
+
+<<load palindrome data and create table with all the information for chromosomes X and Y, eval=FALSE>>=
+
+#skip this chunk if files palindrome_metrics.chrX.tsv and palindrome_metrics.chrY.tsv are available
 
 #color scheme
 color_Borang<-rgb(249,207,68, maxColorValue = 255)
