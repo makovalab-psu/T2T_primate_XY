@@ -14,7 +14,10 @@ This folder contains a jupyter notebook used to identify and cluster homologous 
     https://www.ncbi.nlm.nih.gov/datasets/genome/GCF_028878055.1/
 
  - Sequence classes annotation: \
-    Additional Data file 2 of the publication. 
+    Additional Data file 2 of the publication.
+
+ - Palindrome locations file
+    Provided in the `/data` folder alongside the jupyter notebook. 
 
 
 ## Output 
