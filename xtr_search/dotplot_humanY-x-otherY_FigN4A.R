@@ -13,9 +13,9 @@ library(ggplot2)
 
 args <- commandArgs(trailingOnly=TRUE)
 if(length(args) != 2) {
-	stop("Expected 2 args: (1) input.dots (2) output basename. Note, the input.dots file is expected to have the headerline with TOLID1-XorY and TOLID2-XorY, e.g., HG002-chrY	mPanPan1-chrY.")
+	stop("Expected 2 args: (1) input.dots (2) output basename. Please see note at end of this script for information on input file format.")
 }
-input_dots_file <- args[1]
+input_dots_file <- args[1] # See note at end of this file for more details on this file's format
 output_base <- args[2]
 output_pdf <- paste(output_base, "pdf", sep='.')
 output_png <- paste(output_base, "png", sep='.')
@@ -36,27 +36,27 @@ d$second <- d$second/1000000
 
 p <- ggplot(data=d) +
 		annotate("rect", xmin=-Inf,      ymin=-Inf, xmax=2.45832 ,  ymax=Inf, linewidth=0, alpha=1,    fill="#97CB99") + # PAR
-		annotate("rect", xmin=2.45832,   ymin=-Inf, xmax=2.727072,  ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # X-DEG
+		annotate("rect", xmin=2.45832,   ymin=-Inf, xmax=2.727072,  ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # ANCESTRAL
 		annotate("rect", xmin=2.727072,  ymin=-Inf, xmax=5.914561,  ymax=Inf, linewidth=0, alpha=1,    fill="#EEA9BA") + # XTR1
 		annotate("rect", xmin=5.914561,  ymin=-Inf, xmax=6.200973,  ymax=Inf, linewidth=0, alpha=1,    fill="#88C0EA") + # AMPL
 		annotate("rect", xmin=6.200973,  ymin=-Inf, xmax=6.400875,  ymax=Inf, linewidth=0, alpha=1,    fill="#EEA9BA") + # XTR2
-		annotate("rect", xmin=6.400875,  ymin=-Inf, xmax=7.234999,  ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # X-DEG
+		annotate("rect", xmin=6.400875,  ymin=-Inf, xmax=7.234999,  ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # ANCESTRAL
 		annotate("rect", xmin=7.234999,  ymin=-Inf, xmax=10.389946, ymax=Inf, linewidth=0, alpha=1,    fill="#88C0EA") + # AMPL
 		annotate("rect", xmin=10.389946, ymin=-Inf, xmax=10.565750, ymax=Inf, linewidth=0, alpha=1,    fill="#6A4700") + # SAT
 		annotate("rect", xmin=10.565750, ymin=-Inf, xmax=10.883085, ymax=Inf, linewidth=0, alpha=1,    fill="#B02026") + # CEN (asat/HOR)
 		annotate("rect", xmin=10.883085, ymin=-Inf, xmax=11.711672, ymax=Inf, linewidth=0, alpha=1,    fill="#6A4700") + # SAT
 		annotate("rect", xmin=11.711672, ymin=-Inf, xmax=12.656463, ymax=Inf, linewidth=0, alpha=1,    fill="#6A4700") + # SAT
-		annotate("rect", xmin=12.656463, ymin=-Inf, xmax=14.891106, ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # X-DEG
+		annotate("rect", xmin=12.656463, ymin=-Inf, xmax=14.891106, ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # ANCESTRAL
 		annotate("rect", xmin=14.891106, ymin=-Inf, xmax=14.964927, ymax=Inf, linewidth=0, alpha=1,    fill="#88C0EA") + # AMPL
-		annotate("rect", xmin=14.964927, ymin=-Inf, xmax=16.781335, ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # X-DEG
+		annotate("rect", xmin=14.964927, ymin=-Inf, xmax=16.781335, ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # ANCESTRAL
 		annotate("rect", xmin=16.781335, ymin=-Inf, xmax=16.811393, ymax=Inf, linewidth=0, alpha=1,    fill="#88C0EA") + # AMPL
-		annotate("rect", xmin=16.811393, ymin=-Inf, xmax=17.066094, ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # X-DEG
+		annotate("rect", xmin=16.811393, ymin=-Inf, xmax=17.066094, ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # ANCESTRAL
 		annotate("rect", xmin=17.066094, ymin=-Inf, xmax=17.332346, ymax=Inf, linewidth=0, alpha=1,    fill="#88C0EA") + # AMPL
-		annotate("rect", xmin=17.332346, ymin=-Inf, xmax=18.362331, ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # X-DEG
+		annotate("rect", xmin=17.332346, ymin=-Inf, xmax=18.362331, ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # ANCESTRAL
 		annotate("rect", xmin=18.362331, ymin=-Inf, xmax=19.776671, ymax=Inf, linewidth=0, alpha=1,    fill="#88C0EA") + # AMPL
-		annotate("rect", xmin=19.776671, ymin=-Inf, xmax=20.961203, ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # X-DEG
+		annotate("rect", xmin=19.776671, ymin=-Inf, xmax=20.961203, ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # ANCESTRAL
 		annotate("rect", xmin=20.961203, ymin=-Inf, xmax=21.226263, ymax=Inf, linewidth=0, alpha=1,    fill="#6A4700") + # SAT
-		annotate("rect", xmin=21.226263, ymin=-Inf, xmax=22.270252, ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # X-DEG
+		annotate("rect", xmin=21.226263, ymin=-Inf, xmax=22.270252, ymax=Inf, linewidth=0, alpha=1,    fill="#FFEF57") + # ANCESTRAL
 		annotate("rect", xmin=22.270252, ymin=-Inf, xmax=27.124000, ymax=Inf, linewidth=0, alpha=1,    fill="#88C0EA") + # AMPL
 		annotate("rect", xmin=27.124000, ymin=-Inf, xmax=27.449931, ymax=Inf, linewidth=0, alpha=1,    fill="#D8D8D8") + # OTHER
 		annotate("rect", xmin=27.449931, ymin=-Inf, xmax=62.072743, ymax=Inf, linewidth=0, alpha=1,    fill="#777777") + # HET
@@ -78,4 +78,30 @@ ggsave(file=output_png, plot=p, device="png", units="in", height=8, width=8, lim
 
 # quit
 q()
+
+##########
+## NOTE ##
+##########
+# Please visit https://lastz.github.io/lastz/#fmt_rdotplot for the format
+# information of the "dots" file. Don't forget the headerline, which is
+# expected to contain TOLID1-XorY and TOLID2-XorY, e.g., HG002-chrY
+# mPanPan1-chrY. You can generate this from LASTZ general output using awk.
+# Note the general output is created with option `--format=general` and
+# contains these fields: name1, zstart1, end1, name2, strand2, zstart2+, end2+,
+# nmatch, id%, and cigarx. First write the header line to the "dots" file, e.g.:
+#
+#     TOLID1="HG002"
+#     TOLID2="mPanPan1"
+#     XorY="Y"
+#     printf '%s\t%s\n' \
+#         "${TOLID1}-chr${XorY}" \
+#         "${TOLID2}-chr${XorY}" \
+#         > file.dots
+#
+# Then use this `awk` command to convert the general LASTZ output and append it
+# into the "dots" file:
+#
+#     awk 'BEGIN{FS=" +"; OFS="\t"}{ts=$2; te=$3; qs=$6; qe=$7; if($5 == "-"){tmp=te; te=ts; ts=tmp} print qs, ts; print qe, te; print "NA", "NA"}' \
+#         < file.lz \
+#         >> file.dots
 

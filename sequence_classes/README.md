@@ -56,6 +56,17 @@ Finally, the script tries to classify regions that would otherwise remained uncl
 
 4. manually adjust XTR for both X and Y annotations
 
+
+### Note on labeling
+
+In the final publication, references to "X-Degenerate" (ancestral regions on
+the Y chromosome) and "X-Ancestral" (ancestral regions on the X chromosome)
+were changed to "Ancestral". Data and code herein uses "X-Degenerate" (or some
+other form, e.g., "XDEG"). In the final sequence classes, released as
+Additional File 2 with the manuscript, "XDEG" was renamed to "ANCESTRAL".
+Similarly, "OTHER" was renamed to "ANCESTRAL" and "UNCLASSIFIED" on the X and Y
+chromosomes, respectively.
+
 ---
 
 Contact <a href="mailto:cechova.biomonika@gmail.com">cechova.biomonika@gmail.com</a> with any questions. Please note that the code presented here is intended to support the aforementioned paper, not serve as a tool for the sequence class annotation in new/additional species.

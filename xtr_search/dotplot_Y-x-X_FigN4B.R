@@ -28,7 +28,7 @@ if(length(args) != 6) {
 colors_tsv_file <- args[1]
 #seq.class	hex.color	rgb.color
 #PAR	#97CB99	151,203,153
-#XDEG	#FFEF57	255,239,87
+#ANCESTRAL	#FFEF57	255,239,87
 #XTR	#EEA9BA	238,169,186
 #AMPLICONIC	#88C0EA	136,192,234
 #aSat(HOR)	#B02026	176,32,38
@@ -40,7 +40,7 @@ seqclasses_tsv_file <- args[2]
 # BED file with sequence classes. 3 example lines:
 #chrY    0   37079   OTHER
 #chrY    37079   2526344 PAR
-#chrY    2526344 4150212 XDEG
+#chrY    2526344 4150212 ANCESTRAL
 
 input_tsv_file <- args[3]
 # this is lastz's output after being passed through this awk command (TOLID= mPanPan1, mPanPan3, etc.):
