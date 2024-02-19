@@ -1,5 +1,14 @@
 #! /usr/bin/env Rscript
 
+###############################################################################
+#
+#  Except as indicated otherwise, this file is a 'United States Government
+#  Work', and is released in the public domain.
+#
+#  File 'LICENSE' in this directory (xtr_search) of this distribution
+#  contains full conditions and disclaimers.
+##
+
 library(ggplot2)
 
 args <- commandArgs(trailingOnly=TRUE)
