@@ -32,4 +32,4 @@ Output tables are presented in supplementary tables S36 and S37.
  - Local installation of `blast`.
 
 <hr/>
-Karol Pál, karolpal.jr@gmail.com
+Karol Pál, karolpal [dot] jr [at] gmail [dot] com
