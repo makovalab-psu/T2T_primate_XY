@@ -1,12 +1,15 @@
-# T2T_primate_XY
+# The Complete Sequence and Comparative Analysis of Ape Sex Chromosomes - accompanying code and scripts. 
 
 
-Github repository accompanying the paper: *The Complete Sequence and Comparative Analysis of Ape Sex Chromosomes*
+Github repository accompanying the publication titled *The Complete Sequence and Comparative Analysis of Ape Sex Chromosomes*. These scripts were utilized in the analyses presented in the publication. 
 
+## Preprint
+
+The preprint is currently available at. 
 https://www.biorxiv.org/content/10.1101/2023.11.30.569198v1
 
-
-### links to tools from other repositories used within the paper. 
+ 
+## Links to tools from other repositories used within the paper. 
 
 https://github.com/abcsFrederick/non-B_gfa \
 https://github.com/agshumate/Liftoff \
