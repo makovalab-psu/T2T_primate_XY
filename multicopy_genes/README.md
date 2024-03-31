@@ -32,7 +32,7 @@ Output tables are presented in supplementary tables S36 and S37.
 
  - All python libraries installed in venv used to run this notebook are listed in `requirements.txt`.
 
- - Local installation of `blast`.
+ - Local installation of `blast  2.15.0+`.
 
 <hr/>
 Karol Pál, karolpal [dot] jr [at] gmail [dot] com
