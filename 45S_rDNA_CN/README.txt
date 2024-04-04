@@ -52,4 +52,8 @@ samtools 1.3.1
 htslib 1.3.1
 bedtools v2.29.0
 
+Analysis carried out with
+
+Python 3.11.5
+Snakemake 7.32.4
 --------------------------
