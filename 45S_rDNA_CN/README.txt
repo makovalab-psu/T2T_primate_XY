@@ -47,9 +47,9 @@ NOrmalized to Depth of comparable sequence" (CONKORD).
 --------------------------
 Tool Versions
 
-jellyfish 2.2.10
-samtools 1.3.1
-htslib 1.3.1
+jellyfish 2.2.7
+samtools 1.18
+htslib 1.18
 bedtools v2.29.0
 
 Analysis carried out with
