@@ -11,7 +11,7 @@ as downloading this repository. Start by downloading the repository:
 
 ```
 git clone https://github.com/makovalab-psu/T2T_primate_XY
-cd T2T_primate_xy/src
+cd T2T_primate_XY/palindrover_maf_align
 ```
 
 Simply run by providing the path to `palindrover.py`:
