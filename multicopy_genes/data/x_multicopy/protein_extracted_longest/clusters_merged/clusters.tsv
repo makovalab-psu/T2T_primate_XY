@@ -1,0 +1,128 @@
+id	gene_symbol	Description(s)	PanPan	PanTro	HomSap	GorGor	PonPyg	PonAbe	SymSyn
+6	CSF2RA	granulocyte-macrophage colony-stimulating factor receptor subunit alpha-like;colony stimulating factor 2 receptor subunit alpha;granulocyte-macrophage colony-stimulating factor receptor subunit alpha	1	1	1	1	1	1	2
+8	SLC25A5	solute carrier family 25 member 5;solute carrier family 25 member 6	2	2	2	2	2	2	2
+20	ARSF	arylsulfatase L;arylsulfatase F;arylsulfatase D;steroid sulfatase;arylsulfatase family member H	5	5	5	5	5	5	5
+21	SPANXN5	SPANX family, member N5;SPANX family member B1;SPANX family member D;SPANX family member C;sperm protein associated with the nucleus on the X chromosome N2;sperm protein associated with the nucleus on the X chromosome N1-like;sperm protein associated with the nucleus on the X chromosome N1;SPANX family member N1;SPANX family member N2;sperm protein associated with the nucleus on the X chromosome A-like;sperm protein associated with the nucleus on the X chromosome N2-like;sperm protein associated with the nucleus on the X chromosome N3;sperm protein associated with the nucleus on the X chromosome N5;SPANX family, member N3;SPANX family member N5;SPANX A/D member 3;SPANX A/D member 2;sperm protein associated with the nucleus on the X chromosome N5-like;SPANX family member N4;SPANX family member A2;SPANX A/D member 1;SPANX family member N3;sperm protein associated with the nucleus on the X chromosome C;sperm protein associated with the nucleus, X-linked, family member A1;sperm protein associated with the nucleus on the X chromosome C-like;sperm protein associated with the nucleus on the X chromosome N4;protein TsetseEP-like;sperm protein associated with the nucleus on the X chromosome A;SPANX-N2	33	11	10	17	9	11	7
+23	PRKX	cAMP-dependent protein kinase catalytic subunit PRKX;anoctamin-8-like;protein kinase cAMP-dependent X-linked catalytic subunit;transducin beta like 1 X-linked;uncharacterized LOC129475347;protein kinase X-linked;cAMP-dependent protein kinase catalytic subunit PRKX-like	2	2	2	2	4	3	4
+24	NLGN4X	neuroligin 4 X-linked;neuroligin 3;neuroligin-4, X-linked	2	2	2	2	2	2	2
+25	VCX2	testis-specific basic protein Y 1-like;variable charge X-linked 2;variable charge X-linked;variable charge X-linked protein 3-like;variable charge X-linked protein 1;variable charge X-linked 3B;variable charge X-linked protein 3;variable charge X-linked protein 2;variable charge X-linked protein 1-like;variable charge X-linked 3A;variable charge X-linked protein 2-like;testis-specific basic protein Y 1	16	11	4	4	6	5	8
+29	FAM9C	family with sequence similarity 9 member B;family with sequence similarity 9 member C;family with sequence similarity 9 member A	3	3	3	3	3	3	3
+35	CLCN4	chloride voltage-gated channel 5;chloride voltage-gated channel 4	2	2	2	2	2	2	2
+36	MID1	midline 1;midline 2	2	2	2	2	2	2	2
+41	FRMPD3	FERM and PDZ domain containing 4;FERM and PDZ domain containing 3	2	2	2	2	2	2	2
+42	PRPS2	phosphoribosyl pyrophosphate synthetase 2;phosphoribosyl pyrophosphate synthetase 1	2	2	2	2	2	2	2
+45	TMSB15B	thymosin beta-15A-like;thymosin beta 15C;thymosin beta 4 X-linked;thymosin beta-15A;thymosin beta 15B;thymosin beta 15A;thymosin beta-10-like	4	4	3	4	5	5	4
+51	RAB9A	RAB9A, member RAS oncogene family;RAB9B, member RAS oncogene family	2	2	2	2	2	2	1
+56	putative ubiquitin-conjugating enzyme E2 D2-like protein	putative ubiquitin-conjugating enzyme E2 D2-like protein;ubiquitin-conjugating enzyme E2 D2-like;ubiquitin-conjugating enzyme E2 E3-like	2	1	0	1	1	0	1
+57	GLRA2	glycine receptor alpha 2;glycine receptor subunit alpha-4;glycine receptor alpha 4	2	2	1	2	2	2	2
+60	ASB11	ankyrin repeat and SOCS box containing 11;ankyrin repeat and SOCS box containing 9	2	2	2	2	2	2	2
+68	CA5B	carbonic anhydrase 5B, mitochondrial-like;carbonic anhydrase 5B;putative inactive carbonic anhydrase 5B-like protein	1	2	1	2	2	1	1
+71	BRS3	bombesin receptor subtype 3;gastrin releasing peptide receptor	2	2	2	2	2	2	2
+72	MAGEB16	melanoma-associated antigen B2;melanoma-associated antigen B18;melanoma-associated antigen C2-like;melanoma-associated antigen C2;MAGE family member A9;MAGE family member B6;melanoma-associated antigen 8-like;melanoma-associated antigen 9-like;putative MAGE domain-containing protein MAGEA13P;MAGEA10-MAGEA5 readthrough;melanoma-associated antigen C1-like;MAGE family member A3;MAGE family member A6;melanoma-associated antigen B16;melanoma-associated antigen 12;melanoma-associated antigen B10-like;MAGE family member A2B;MAGE family member B1;MAGE family member C2;MAGE family member B17;melanoma-associated antigen 9;MAGE family member B10;melanoma-associated antigen 10-like;MAGE family member A10;MAGE family member A1;MAGE family member C1;melanoma-associated antigen 11;MAGE family member B3;melanoma-associated antigen 2;melanoma-associated antigen C3-like;melanoma-associated antigen 6;MAGE family member B2;MAGE family member A2;MAGE family member A9B;MAGE family member B16;MAGE family member B5;melanoma-associated antigen B4;MAGE family member C3;MAGE family member A8;melanoma-associated antigen B18-like;melanoma-associated antigen 3-like;MAGE family member A4;melanoma-associated antigen 8;melanoma-associated antigen B1;MAGE family member B6B;melanoma-associated antigen 3;melanoma-associated antigen B10;melanoma-associated antigen B6;MAGE family member A11;MAGE family member B4;MAGE family member A12;MAGE family member B18;melanoma-associated antigen C1	37	29	27	28	32	32	25
+87	PHKA2	phosphorylase kinase regulatory subunit alpha 2;phosphorylase kinase regulatory subunit alpha 1	2	2	2	2	2	2	2
+95	RPS6KA3	ribosomal protein S6 kinase A6;ribosomal protein S6 kinase A3	2	2	2	2	2	2	2
+99	YY2	membrane-bound transcription factor site-2 protease-like;YY2 transcription factor;membrane bound transcription factor peptidase, site 2;membrane-bound transcription factor site-2 protease	2	2	2	1	1	1	2
+105	PRDX4	thioredoxin-dependent peroxide reductase, mitochondrial-like;peroxiredoxin 4	2	1	1	1	1	1	1
+109	SATL1	spermidine/spermine N1-acetyltransferase 1;spermidine/spermine N1-acetyl transferase like 1	2	2	2	2	2	2	2
+114	ZNF711	zinc finger protein X-linked;zinc finger protein 711	2	2	2	2	2	2	2
+115	SUPT20HL2	SUPT20H like 1;putative transcription factor SPT20 homolog-like 2;transcription factor SPT20 homolog-like 1;SUPT20H like 2	2	2	2	2	2	2	2
+116	40S ribosomal protein S26-like	40S ribosomal protein S26-like	2	2	0	1	0	0	0
+124	DCAF8L2	DDB1 and CUL4 associated factor 8 like 1;DDB1 and CUL4 associated factor 8 like 2;DDB1- and CUL4-associated factor 8-like protein 2	2	2	2	2	2	2	2
+125	IL1RAPL1	interleukin 1 receptor accessory protein like 1;interleukin 1 receptor accessory protein like 2	2	2	2	2	2	2	2
+130	GK	glycerol kinase	2	2	1	1	1	1	1
+132	FTHL17	putative ferritin heavy polypeptide-like 19;ferritin heavy chain like 17;ferritin heavy chain-like;ferritin heavy chain like 18;proline rich and Gla domain 1	1	3	1	3	4	3	4
+133	DRP2	dystrophin related protein 2;dystrophin	2	2	2	2	2	2	2
+135	FAM47B	protein FAM47A-like;family with sequence similarity 47 member C;protein FAM47B-like;putative protein FAM47C;family with sequence similarity 47 member B;protein FAM47B;family with sequence similarity 47 member A	4	4	3	4	4	4	4
+140	H2AL3	histone H2A-like 3;H2A.B variant histone 3;H2A.L variant histone 1Q;H2A.B variant histone 2;H2A.L variant histone 3;histone H2A-Bbd type 2/3;H2A.B variant histone 1;histone H2A-Bbd type 2/3-like	5	5	4	4	5	5	4
+141	TFDP3	transcription factor Dp-1-like;transcription factor Dp-1;transcription factor Dp family member 3	2	1	1	2	2	2	2
+143	endogenous retrovirus group K member 6 Env polyprotein-like	endogenous retrovirus group K member 6 Env polyprotein-like;endogenous retrovirus group K member 6 Env polyprotein;endogenous retrovirus group K member 7 Env polyprotein-like;endogenous retrovirus group K member 25 Env polyprotein-like	2	1	0	0	0	0	2
+147	CYBB	NADPH oxidase 1;cytochrome b-245 heavy chain;cytochrome b-245 beta chain	2	2	2	2	2	2	2
+155	TSPAN7	tetraspanin 7;tetraspanin 6	2	2	2	2	2	1	2
+171	MPP1	calcium/calmodulin dependent serine protein kinase;MAGUK p55 scaffold protein 1	2	2	2	2	2	2	2
+176	MAOA	monoamine oxidase B;monoamine oxidase A	2	2	2	2	2	2	2
+181	FUNDC1	FUN14 domain containing 2;FUN14 domain containing 1	2	2	2	2	2	2	2
+182	40S ribosomal protein SA-like	40S ribosomal protein SA-like	2	3	0	3	3	2	2
+187	KRBOX4	KRAB box domain containing 4;zinc finger protein 630-like;zinc finger protein 157-like	1	1	1	0	2	2	1
+188	ZNF630	zinc finger protein 157;ZFP92 zinc finger protein;KLF transcription factor 8;zinc finger protein 75D;zinc finger protein 81;zinc finger protein 41;zinc finger protein 449;zinc finger protein 182;zinc finger protein 674;zinc finger protein 275;zinc finger protein 630;zinc finger protein 674-like	11	11	11	11	11	11	11
+190	SLC9A6	solute carrier family 9 member A6;solute carrier family 9 member A7	2	2	2	2	2	2	2
+208	SPACA5	sperm acrosome associated 5B;sperm acrosome associated 5	1	1	2	1	1	1	1
+210	SSX4	protein SSX7;protein SSX4-like;protein SSX3;protein SSX3-like;SSX family member 5;putative protein SSX9;SSX family member 1;SSX family member 3;putative protein SSX8;protein SSX4;SSX family member 2B;protein SSX1-like;putative protein SSX6;SSX family member 7;SSX family member 4B;SSX family member 4;protein SSX5;SSX family member 2;protein SSX7-like;protein SSX2-like;protein SSX1;protein SSX2;uncharacterized LOC129475302	9	9	8	9	16	16	6
+216	RBMX	RNA binding motif protein X-linked;RNA-binding motif protein, X chromosome-like;RNA binding motif protein 3	2	3	2	2	3	3	2
+245	GAGE12H	G antigen 1;X antigen family member 5;PAGE family member 1;G antigen 10;X antigen family member 2;G antigen 12D;G antigen 12H;G antigen 12G;X antigen family member 5-like;G antigen 12J;G antigen 2D;G antigen 12E;G antigen 7;G antigen 12F;X antigen family member 3;G antigen 10-like;PAGE family member 3;G antigen 5;G antigen 7-like;G antigen 1-like;G antigen 12B;G antigen 13;PAGE family member 4;G antigen 2A;G antigen 4;G antigen 2D-like;X antigen family member 3-like	32	16	26	20	15	18	17
+246	USP51	ubiquitin specific peptidase 27 X-linked;ubiquitin specific peptidase 51	2	2	2	2	2	2	2
+251	histone H3.3A-like	histone H3.3A-like	1	1	0	1	2	1	1
+253	NUDT10	nudix hydrolase 10;nudix hydrolase 11;diphosphoinositol polyphosphate phosphohydrolase 3-beta;diphosphoinositol polyphosphate phosphohydrolase 3-beta-like	2	2	2	2	2	2	2
+255	CENPVL3	centromere protein V-like protein 1;centromere protein V like 1;centromere protein V like 2;centromere protein V like 3	3	3	3	3	3	3	3
+257	TRO	MAGE family member D2;melanoma-associated antigen D2;MAGE family member D4;MAGE family member D4B;melanoma-associated antigen D4-like;trophinin;MAGE family member D1;melanoma-associated antigen D4	5	5	5	5	5	5	5
+259	putative uncharacterized protein FLJ39060	putative uncharacterized protein FLJ39060	1	1	0	2	2	2	2
+260	XAGE1A	X antigen family member 1B;X antigen family member 1A;X antigen family member 1;X antigen family member 1-like	2	2	3	2	1	1	1
+261	FAM156A	family with sequence similarity 156 member B;family with sequence similarity 156 member A;protein FAM156A/FAM156B	2	2	2	2	2	2	2
+279	PGAM4	phosphoglycerate mutase family member 4;phosphoglycerate mutase 1-like	2	1	1	1	0	0	0
+284	PAGE5	P antigen family member 5;PAGE family member 5;PAGE family member 2B;PAGE family member 2;putative G antigen family E member 3	5	3	3	2	3	3	1
+291	SPIN3	spindlin family member 2B;spindlin-2-like;spindlin family member 2A;spindlin family member 3;spindlin-2;spindlin family member 4	4	3	4	5	4	3	4
+294	ZXDB	zinc finger X-linked duplicated B;zinc finger X-linked protein ZXDA-like;zinc finger X-linked duplicated A;zinc finger X-linked protein ZXDB-like;zinc finger X-linked protein ZXDB	2	2	2	2	2	2	2
+320	AWAT1	acyl-CoA wax alcohol acyltransferase 2;diacylglycerol O-acyltransferase 2 like 6;acyl-CoA wax alcohol acyltransferase 1	3	3	3	3	3	3	3
+324	ARR3	RAB41, member RAS oncogene family;arrestin 3;arrestin-C-like	2	2	2	2	1	2	2
+347	CXorf49B	uncharacterized LOC129395229;chromosome X open reading frame 49-like;chromosome X CXorf49B homolog;chromosome X open reading frame 49B;uncharacterized protein CXorf49-like;uncharacterized protein CXorf49;chromosome X open reading frame 49;uncharacterized LOC129393025	7	6	3	2	3	4	4
+348	cytochrome c oxidase subunit NDUFA4-like	cytochrome c oxidase subunit NDUFA4-like	2	2	0	1	1	1	0
+351	TPT1-like protein	TPT1-like protein;translationally-controlled tumor protein-like	1	1	0	1	2	3	1
+357	DMRTC1B	DMRT like family C1;doublesex- and mab-3-related transcription factor C1;DMRT like family C1B	2	2	2	2	2	2	2
+358	FAM236B	protein FAM236D;family with sequence similarity 236 member A;family with sequence similarity 236 member D;family with sequence similarity 236 member C;protein FAM236A-like;protein FAM236D-like;protein FAM236A;uncharacterized LOC112131009;family with sequence similarity 236 member B	3	3	4	2	2	3	4
+360	PABPC1L2A	polyadenylate-binding protein 1-like 2;poly(A) binding protein cytoplasmic 1 like 2B;poly(A) binding protein cytoplasmic 1 like 2A;poly(A) binding protein cytoplasmic 5	3	3	3	3	3	3	3
+393	GPR174	P2Y receptor family member 10;putative P2Y purinoceptor 10;G protein-coupled receptor 174	2	2	2	2	2	3	3
+408	CHM	GDP dissociation inhibitor 1;CHM Rab escort protein	2	2	2	2	2	2	2
+410	putative elongation factor 1-alpha-like 3	putative elongation factor 1-alpha-like 3;elongation factor 1-alpha 1-like	2	2	0	1	1	1	0
+415	TSC22D3	TSC22 domain family protein 3-like;TSC22 domain family member 3	2	2	1	2	2	2	1
+438	RPL36A-HNRNPH2	60S ribosomal protein L36a-like;ribosomal protein L36a;RPL36A-HNRNPH2 readthrough	1	2	2	1	1	1	2
+442	ARMCX6	armadillo repeat containing X-linked 2;armadillo repeat containing X-linked 3;protein ARMCX6-like;protein ARMCX6;armadillo repeat containing X-linked 1;armadillo repeat containing X-linked 6	5	5	4	5	5	5	5
+443	NXF3	nuclear RNA export factor 3;nuclear RNA export factor 5-like;nuclear RNA export factor 2-like;nuclear RNA export factor 2B;nuclear RNA export factor 5;nuclear RNA export factor 2	5	5	3	5	4	4	4
+445	TCEAL2	transcription elongation factor A like 2;transcription elongation factor A like 4	2	2	2	2	2	2	2
+446	TCEAL5	transcription elongation factor A protein-like 3;transcription elongation factor A like 3;transcription elongation factor A like 5;transcription elongation factor A like 6	3	3	3	3	3	3	3
+447	BEX3	brain expressed X-linked 5;brain expressed X-linked 3;brain expressed X-linked 4	3	3	3	3	3	3	3
+448	TCP11X1	t-complex 11 family, X-linked 2;T-complex protein 11 X-linked protein 2;T-complex protein 11 X-linked protein 2-like;t-complex 11 family, X-linked 1	3	2	2	2	1	1	2
+450	GPRASP2	G protein-coupled receptor associated sorting protein 1;G protein-coupled receptor associated sorting protein 2;ARMCX5-GPRASP2 readthrough	2	2	3	2	2	2	2
+452	RAB40AL	ras-related protein Rab-40A-like;ras-related protein Rab-40A;RAB40A like;RAB40A, member RAS oncogene family	2	2	2	2	2	2	2
+453	BEX2	brain expressed X-linked 2;brain expressed X-linked 1	2	2	2	2	2	2	2
+455	TCEAL8	transcription elongation factor A protein-like 8;transcription elongation factor A like 8	1	2	1	1	1	1	1
+457	TCEAL1	transcription elongation factor A like 9;transcription elongation factor A like 1	2	2	2	2	2	2	2
+460	H2BW2	histone H2B type F-M-like;histone H2B type W-T;H2B.W histone 1;histone H2B type W-T-like;H2B.W histone 2;histone H2B type F-M;H2B.W histone 4	3	3	2	3	3	4	1
+462	SLC25A53	solute carrier family 25 member 53-like;solute carrier family 25 member 53	1	1	1	1	2	2	1
+463	ZCCHC12	zinc finger CCHC-type containing 12;zinc finger CCHC-type containing 18	2	2	2	2	2	2	2
+466	TEX13B	testis expressed 13A;testis expressed 13B	2	2	2	2	2	2	2
+511	HMGB3	high mobility group protein B3-like;high mobility group box 3	2	2	1	2	1	1	2
+526	CT83	cancer/testis antigen 83;kita-kyushu lung cancer antigen 1;kita-kyushu lung cancer antigen 1 homolog;kita-kyushu lung cancer antigen 1-like	2	2	1	2	2	2	2
+534	CT47B1	cancer/testis antigen family 47 member A1;cancer/testis antigen family 47 member C1;cancer/testis antigen family 47 member B1;cancer/testis antigen 47A-like;cancer/testis antigen family 47 member A12;cancer/testis antigen family 47 member A2;cancer/testis antigen 47A;cancer/testis antigen family 47 member A3;cancer/testis antigen family 47 member B1-like;cancer/testis antigen family 47 member A4;cancer/testis antigen family 47 member A11;cancer/testis antigen family 47 member A5	4	4	9	11	3	4	3
+551	RHOXF2	Rhox homeobox family member 2;uncharacterized LOC129475559;rhox homeobox family member 2-like;Rhox homeobox family member 2B;rhox homeobox family member 2	3	3	2	2	1	1	2
+569	TEX13C	TEX13 family member C;TEX13 family member D	2	2	2	2	2	2	2
+572	DCAF12L1	DDB1- and CUL4-associated factor 12-like protein 1;DDB1- and CUL4-associated factor 12-like protein 2;DDB1 and CUL4 associated factor 12 like 1;DDB1 and CUL4 associated factor 12 like 2	2	2	2	2	2	2	2
+606	PABIR2	PABIR family member 3;PABIR family member 2;PABIR family member 1	2	2	2	2	2	2	2
+608	SMIM10	small integral membrane protein 10 like 2A;uncharacterized LOC101139234;small integral membrane protein 10 like 2B;small integral membrane protein 10;small integral membrane protein 10-like protein 2A	3	3	3	3	3	3	3
+609	RTL8B	retrotransposon Gag like 8A;retrotransposon Gag-like protein 8A;retrotransposon Gag like 8C;LDOC1 regulator of NFKB signaling;retrotransposon Gag like 8B;retrotransposon Gag-like protein 8C	4	4	4	4	2	2	1
+611	ETDB	embryonic testis differentiation protein homolog C;embryonic testis differentiation protein homolog B;embryonic testis differentiation homolog A;embryonic testis differentiation protein homolog B-like;embryonic testis differentiation homolog B;embryonic testis differentiation homolog C	3	3	3	3	3	4	5
+612	CT55	cancer/testis antigen 55-like;cancer/testis antigen 55	3	2	1	3	2	2	3
+613	SAGE1	sarcoma antigen 1;putative SAGE1-like protein;integrator complex subunit 6 like;sarcoma antigen 1-like	5	5	2	3	5	5	2
+614	CT45A5	cancer/testis antigen family 45 member A3-like;cancer/testis antigen family 45 member A1;cancer/testis antigen family 45 member A10;cancer/testis antigen family 45 member A7;cancer/testis antigen family 45 member A8;cancer/testis antigen family 45 member A6-like;cancer/testis antigen family 45 member A9;cancer/testis antigen family 45 member A3;cancer/testis antigen family 45 member A2;cancer/testis antigen family 45 member A6;cancer/testis antigen family 45 member A5	4	4	8	4	3	3	2
+637	ubiquitin-conjugating enzyme E2 N-like	ubiquitin-conjugating enzyme E2 N-like;putative ubiquitin-conjugating enzyme E2 N-like;ubiquitin-conjugating enzyme E2 N;ubiquitin conjugating enzyme E2 N like	1	2	0	1	1	1	0
+640	CXorf51A	chromosome X CXorf51B homolog;chromosome X open reading frame 51B;chromosome X CXorf51A homolog;uncharacterized protein CXorf51A-like;chromosome X open reading frame 51A;uncharacterized protein CXorf51A	3	2	2	2	1	1	1
+647	uncharacterized LOC129395210	uncharacterized LOC129395210;uncharacterized LOC129053094;uncharacterized LOC129395213;uncharacterized LOC129395207;uncharacterized LOC129024421;uncharacterized LOC100982139;uncharacterized LOC103785494	5	0	0	0	1	1	0
+648	EOLA1	endothelium and lymphocyte associated ASCH domain 1;endothelium and lymphocyte associated ASCH domain 2;protein EOLA1;EOLA-like protein	5	2	2	2	1	2	2
+649	HSFX3	heat shock transcription factor family, X-linked member 4;heat shock transcription factor family, X-linked member 3;heat shock transcription factor, X-linked member 3-like;heat shock transcription factor, X-linked member 3	5	2	2	1	2	3	2
+650	HSFX2	heat shock transcription factor, X-linked-like;heat shock transcription factor family, X-linked 1;heat shock transcription factor, X-linked;heat shock transcription factor family, X-linked 2	2	1	2	2	3	3	13
+651	TMEM185A	transmembrane protein 185A;transmembrane protein 185A-like	2	1	1	2	3	3	2
+655	MTMR1	myotubularin related protein 1;myotubularin 1	2	2	2	2	2	2	2
+666	CSAG3	CSAG family member 2;chondrosarcoma-associated gene 2/3 protein;chondrosarcoma associated gene 1;CSAG family member 3;chondrosarcoma-associated gene 2/3 protein-like	4	2	3	2	4	3	2
+671	PNMA6A	paraneoplastic antigen-like protein 6A;paraneoplastic antigen Ma6F-like;PNMA family member 6F;PNMA family member 3;PNMA family member 6A;PNMA family member 5;paraneoplastic antigen Ma6E;paraneoplastic antigen-like protein 6B;PNMA family member 6E	6	6	6	6	6	6	5
+672	PWWP4	PWWP domain-containing DNA repair factor 4-like;PWWP domain containing 4;PWWP domain-containing DNA repair factor 4	2	2	1	2	2	2	2
+679	keratin, type I cytoskeletal 18-like	keratin, type I cytoskeletal 18-like	1	1	0	3	1	2	0
+702	OPN1LW	medium-wave-sensitive opsin 1;opsin 1, long wave sensitive;long-wave-sensitive opsin 1;opsin 1, medium wave sensitive 2;opsin 1, medium wave sensitive;opsin 1, medium wave sensitive 3	2	2	3	2	2	2	2
+703	TEX28	testis-specific protein TEX28-like;testis-specific protein TEX28;testis expressed 28	2	2	1	2	2	2	2
+718	IKBKG	NF-kappa-B essential modulator-like;NF-kappa-B essential modulator;inhibitor of nuclear factor kappa B kinase regulatory subunit gamma	2	2	1	2	1	1	1
+719	CTAG1A	cancer/testis antigen 1;cancer/testis antigen 1A;cancer/testis antigen 2;cancer/testis antigen 1B	3	3	3	3	2	2	1
+725	F8A2	40-kDa huntingtin-associated protein-like;40-kDa huntingtin-associated protein;coagulation factor VIII associated 1;coagulation factor VIII associated 3;coagulation factor VIII associated 2	3	3	3	3	3	3	3
+737	tubulin beta-8 chain	tubulin beta-8 chain;tubulin beta-8 chain-like	2	1	0	0	0	0	0
+738	putative uncharacterized protein FLJ44672	putative uncharacterized protein FLJ44672;putative uncharacterized protein FLJ46235;uncharacterized LOC130541155	3	1	0	0	0	0	0
+742	muscleblind like splicing regulator 3	muscleblind like splicing regulator 3;pyrimidinergic receptor P2Y4;p21 (RAC1) activated kinase 3;spindlin family member 4	0	1	0	0	0	3	0
+752	ran-specific GTPase-activating protein-like	ran-specific GTPase-activating protein-like	0	1	0	0	2	0	0
+753	uncharacterized LOC129138873	uncharacterized LOC129138873;uncharacterized LOC129138846;uncharacterized LOC129138669	0	3	0	0	0	0	0
+776	uncharacterized LOC115932372	uncharacterized LOC115932372;uncharacterized LOC129476473;uncharacterized protein AH6.3-like	0	1	0	1	2	2	1
+785	collagen alpha-4(IV) chain-like	collagen alpha-4(IV) chain-like	0	0	4	0	0	0	0

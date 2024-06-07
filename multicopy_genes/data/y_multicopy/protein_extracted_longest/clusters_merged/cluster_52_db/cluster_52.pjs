@@ -1,0 +1,22 @@
+{
+  "version": "1.2",
+  "dbname": "cluster_52",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "/Users/kxp5629/proj/Y/data/work_dir/multicopy_genes/y_multicopy/protein_extracted_longest/clusters_merged/cluster_52.faa",
+  "number-of-letters": 948,
+  "number-of-sequences": 9,
+  "last-updated": "2024-02-28T12:51:00",
+  "number-of-volumes": 1,
+  "bytes-total": 150201,
+  "bytes-to-cache": 1238,
+  "files": [
+    "cluster_52.pdb",
+    "cluster_52.phr",
+    "cluster_52.pin",
+    "cluster_52.pot",
+    "cluster_52.psq",
+    "cluster_52.ptf",
+    "cluster_52.pto"
+  ]
+}

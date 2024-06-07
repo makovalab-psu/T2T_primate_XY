@@ -1,0 +1,22 @@
+{
+  "version": "1.2",
+  "dbname": "cluster_111",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "/Users/kxp5629/proj/Y/data/work_dir/multicopy_genes/y_multicopy/protein_extracted_longest/clusters_merged/cluster_111.faa",
+  "number-of-letters": 4261,
+  "number-of-sequences": 5,
+  "last-updated": "2024-02-28T12:51:00",
+  "number-of-volumes": 1,
+  "bytes-total": 152773,
+  "bytes-to-cache": 4515,
+  "files": [
+    "cluster_111.pdb",
+    "cluster_111.phr",
+    "cluster_111.pin",
+    "cluster_111.pot",
+    "cluster_111.psq",
+    "cluster_111.ptf",
+    "cluster_111.pto"
+  ]
+}

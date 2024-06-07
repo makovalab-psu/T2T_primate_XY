@@ -1,0 +1,22 @@
+{
+  "version": "1.2",
+  "dbname": "cluster_47",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "/Users/kxp5629/proj/Y/data/work_dir/multicopy_genes/y_multicopy/protein_extracted_longest/clusters_merged/cluster_47.faa",
+  "number-of-letters": 540,
+  "number-of-sequences": 4,
+  "last-updated": "2024-02-28T12:51:00",
+  "number-of-volumes": 1,
+  "bytes-total": 148953,
+  "bytes-to-cache": 785,
+  "files": [
+    "cluster_47.pdb",
+    "cluster_47.phr",
+    "cluster_47.pin",
+    "cluster_47.pot",
+    "cluster_47.psq",
+    "cluster_47.ptf",
+    "cluster_47.pto"
+  ]
+}

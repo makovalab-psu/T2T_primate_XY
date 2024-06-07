@@ -1,0 +1,22 @@
+{
+  "version": "1.2",
+  "dbname": "cluster_75",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "/Users/kxp5629/proj/Y/data/work_dir/multicopy_genes/y_multicopy/protein_extracted_longest/clusters_merged/cluster_75.faa",
+  "number-of-letters": 1422,
+  "number-of-sequences": 9,
+  "last-updated": "2024-02-28T12:51:00",
+  "number-of-volumes": 1,
+  "bytes-total": 150656,
+  "bytes-to-cache": 1712,
+  "files": [
+    "cluster_75.pdb",
+    "cluster_75.phr",
+    "cluster_75.pin",
+    "cluster_75.pot",
+    "cluster_75.psq",
+    "cluster_75.ptf",
+    "cluster_75.pto"
+  ]
+}

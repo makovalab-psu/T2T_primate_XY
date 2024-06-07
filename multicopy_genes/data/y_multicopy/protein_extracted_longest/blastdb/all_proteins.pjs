@@ -1,0 +1,22 @@
+{
+  "version": "1.2",
+  "dbname": "all_proteins",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "/Users/kxp5629/proj/Y/data/work_dir/y_multicopy/protein_extracted_longest/blastdb/all_proteins.faa",
+  "number-of-letters": 312063,
+  "number-of-sequences": 730,
+  "last-updated": "2024-02-07T16:16:00",
+  "number-of-volumes": 1,
+  "bytes-total": 595363,
+  "bytes-to-cache": 318818,
+  "files": [
+    "all_proteins.pdb",
+    "all_proteins.phr",
+    "all_proteins.pin",
+    "all_proteins.pot",
+    "all_proteins.psq",
+    "all_proteins.ptf",
+    "all_proteins.pto"
+  ]
+}

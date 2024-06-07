@@ -1,0 +1,22 @@
+{
+  "version": "1.2",
+  "dbname": "cluster_44",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "/Users/kxp5629/proj/Y/data/work_dir/multicopy_genes/y_multicopy/protein_extracted_longest/clusters_merged/cluster_44.faa",
+  "number-of-letters": 32544,
+  "number-of-sequences": 73,
+  "last-updated": "2024-02-28T12:51:00",
+  "number-of-volumes": 1,
+  "bytes-total": 195425,
+  "bytes-to-cache": 33410,
+  "files": [
+    "cluster_44.pdb",
+    "cluster_44.phr",
+    "cluster_44.pin",
+    "cluster_44.pot",
+    "cluster_44.psq",
+    "cluster_44.ptf",
+    "cluster_44.pto"
+  ]
+}

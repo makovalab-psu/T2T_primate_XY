@@ -1,0 +1,22 @@
+{
+  "version": "1.2",
+  "dbname": "cluster_68",
+  "dbtype": "Protein",
+  "db-version": 5,
+  "description": "/Users/kxp5629/proj/Y/data/work_dir/multicopy_genes/y_multicopy/protein_extracted_longest/clusters_merged/cluster_68.faa",
+  "number-of-letters": 4432,
+  "number-of-sequences": 9,
+  "last-updated": "2024-02-28T12:51:00",
+  "number-of-volumes": 1,
+  "bytes-total": 153840,
+  "bytes-to-cache": 4722,
+  "files": [
+    "cluster_68.pdb",
+    "cluster_68.phr",
+    "cluster_68.pin",
+    "cluster_68.pot",
+    "cluster_68.psq",
+    "cluster_68.ptf",
+    "cluster_68.pto"
+  ]
+}

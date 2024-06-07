@@ -1,0 +1,26 @@
+id	gene_symbol	Description(s)	PanPan	PanTro	HomSap	GorGor	PonPyg	PonAbe	SymSyn
+3	PPP2R3B-2	serine/threonine-protein phosphatase 2A regulatory subunit B'' subunit beta;protein phosphatase 2 regulatory subunit B''beta;serine/threonine-protein phosphatase 2A regulatory subunit B'' subunit beta-like	1	2	1	1	1	1	1
+6	CSF2RA-2	granulocyte-macrophage colony-stimulating factor receptor subunit alpha-like;colony stimulating factor 2 receptor subunit alpha;granulocyte-macrophage colony-stimulating factor receptor subunit alpha	1	1	1	1	2	2	1
+20	RPS4Y1	40S ribosomal protein S4, Y;ribosomal protein S4 Y-linked 2;ribosomal protein S4 Y-linked 1	2	2	2	2	2	2	2
+28	VCY1B	testis-specific basic protein Y 1-like;variable charge X-linked protein 3-like;variable charge X-linked protein 1;variable charge Y-linked 1B;variable charge X-linked protein 2;variable charge X-linked protein 3;eukaryotic translation initiation factor 4 gamma-like;variable charge Y-linked	2	2	2	1	1	0	1
+44	RBMY1A1	RNA-binding motif protein, X chromosome-like;RNA-binding motif protein, Y chromosome, family 1 member A1-like;RNA binding motif protein Y-linked family 1 member E;RNA binding motif protein Y-linked family 1 member J;RNA binding motif protein Y-linked family 1 member D;RNA binding motif protein Y-linked family 1 member B;RNA binding motif protein Y-linked family 1 member F;RNA-binding motif protein, Y chromosome, family 1 member B-like;RNA binding motif protein Y-linked family 1 member A1;RNA-binding motif protein, Y chromosome, family 1 member F/J-like;RNA-binding motif protein, Y chromosome, family 1 member F/J	29	8	6	13	8	4	5
+45	TSPY9	testis specific protein Y-linked 9;testis specific protein Y-linked 10;testis specific protein Y-linked 4;testis-specific Y-encoded protein 3;testis specific protein Y-linked 3;testis specific protein Y-linked 1;testis-specific Y-encoded protein 4;testis specific protein Y-linked 2;testis-specific Y-encoded protein 1;testis-specific Y-encoded protein 4-like;testis-specific Y-encoded protein 2-like;testis-specific Y-encoded protein 1-like;testis-specific Y-encoded-like protein 4;testis specific protein Y-linked 8;testis-specific Y-encoded protein 8-like;testis-specific Y-encoded protein 8;testis-specific Y-encoded protein 3-like	26	24	44	6	27	19	5
+47	keratin, type I cytoskeletal 18-like	keratin, type I cytoskeletal 18-like	4	0	0	0	0	0	0
+51	CDY1	chromodomain Y-linked 1B;testis-specific chromodomain protein Y 1-like;chromodomain Y-linked 2B;chromodomain Y-linked 1;chromodomain Y-linked 2A;chromodomain protein, Y-linked, 1;testis-specific chromodomain protein Y 1;testis-specific chromodomain protein Y 2;testis-specific chromodomain protein Y 2-like	2	4	4	1	13	23	5
+52	BPY2B	basic charge Y-linked 2B;testis-specific basic protein Y 2;basic charge Y-linked 2C;basic charge Y-linked 2	2	2	3	2	0	0	0
+53	DAZ2	deleted in azoospermia protein 1-like;deleted in azoospermia protein 3;deleted in azoospermia protein 3-like;deleted in azoospermia 2;deleted in azoospermia protein 2;deleted in azoospermia 1;deleted in azoospermia 4;deleted in azoospermia protein 4-like;deleted in azoospermia protein 1;deleted in azoospermia 3	2	4	4	2	10	5	2
+67	MTRNR2-like 17	MTRNR2-like 17;MTRNR2-like	0	3	0	0	0	0	0
+68	glutamate dehydrogenase 1, mitochondrial-like	glutamate dehydrogenase 1, mitochondrial-like	0	3	0	0	2	4	0
+69	HSFY2	heat shock transcription factor, Y-linked-like;heat shock transcription factor Y-linked 1;heat shock transcription factor, Y-linked;heat shock transcription factor Y-linked 2	0	1	2	1	4	5	6
+75	PRY2	PTPN13-like protein, Y-linked;PTPN13 like Y-linked 2;PTPN13 like Y-linked	0	0	2	2	1	4	0
+82	protein FRG1-like	protein FRG1-like	0	0	0	1	0	2	2
+84	centriole and centriolar satellite protein OFD1-like	centriole and centriolar satellite protein OFD1-like	0	0	0	2	0	0	0
+97	B melanoma antigen 3-like	B melanoma antigen 3-like;B melanoma antigen 5-like	0	0	0	2	0	0	0
+98	glutathione hydrolase 1 proenzyme-like	glutathione hydrolase 1 proenzyme-like	0	0	0	2	0	0	0
+99	uncharacterized LOC129530384	uncharacterized LOC129530384;uncharacterized LOC129530379	0	0	0	2	0	0	0
+111	protein FAM47A-like	protein FAM47A-like	0	0	0	0	2	2	1
+113	zinc finger protein 285-like	zinc finger protein 285-like;zinc finger protein 717-like;zinc finger protein 347-like	0	0	0	0	3	2	0
+115	uncharacterized LOC129053376	uncharacterized LOC129053376;uncharacterized LOC129025631;translation initiation factor IF-2-like	0	0	0	0	2	2	0
+116	adenylate kinase isoenzyme 6-like	adenylate kinase isoenzyme 6-like	0	0	0	0	3	7	2
+135	transcription initiation factor TFIID subunit 13-like	transcription initiation factor TFIID subunit 13-like	0	0	0	0	0	0	2
+136	TATA-box binding protein associated factor 11 like protein 2-like	TATA-box binding protein associated factor 11 like protein 2-like	0	0	0	0	0	0	6
